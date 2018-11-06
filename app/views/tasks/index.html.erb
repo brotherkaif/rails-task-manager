@@ -1,0 +1,9 @@
+<h1>My Tasks</h1>
+<div id="task-list">
+  <% @tasks.each do |task| %>
+    <% completed_box = task.completed ? "far fa-check-square" : "far fa-square" %>
+    <div class="task">
+    <p><i class="<%= completed_box %>" ></i> <%= task.title %></p>
+    </div>
+  <% end%>
+</div>
