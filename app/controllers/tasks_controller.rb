@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :task_params, only: [:create]
   def index
     @tasks = Task.all
   end
@@ -12,5 +13,14 @@ class TasksController < ApplicationController
   end
 
   def create
+    @task = Task.new(task_params)
+    @task.save
+    redirect_to task_path(@task)
+  end
+
+  def task_params
+    # *Strong params*: You need to *whitelist* what can be updated by the user
+    # Never trust user data!
+    params.require(:task).permit(:title, :details)
   end
 end
