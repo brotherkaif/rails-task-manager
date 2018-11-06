@@ -1,6 +1,6 @@
 <div class="card">
-<%= link_to "edit", edit_path %>
   <div class="card-body">
+    <p class="text-right"><i class="fas fa-edit"></i> <%= link_to "edit task", edit_path %>
     <h1><%= @task.title %></h1>
     <hr>
       <%= @task.details %>
@@ -8,6 +8,7 @@
     <% completed_box = @task.completed ? "far fa-check-square" : "far fa-square" %>    
     <% completed_message = @task.completed ? "this task has been completed!" : "this task is still incomplete!" %>    
     <p><i class="<%= completed_box %>" ></i> <%= completed_message %></p>
+    <hr>
+    <p><i class="fas fa-arrow-circle-left"></i> <%= link_to "back to tasks", tasks_path %>
   </div>
 </div>
-<%= link_to "back to tasks", tasks_path %>

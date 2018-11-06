@@ -2,10 +2,10 @@
   <div class="card-body">
     <h1>My Tasks</h1>
     <% @tasks.each do |task| %>
-      <hr>
       <% completion_status_icon = task.completed ? '<i class="far fa-check-square"></i>' : '<i class="far fa-square"></i>' %>      
       <p><%= raw(completion_status_icon) %> <%= link_to task.title, task_path(task) %> <%= link_to raw('<i class="fas fa-trash-alt"></i>'), destroy_path(task), method: "delete", data: {confirm: "Are you sure?"}  %></p>
     <% end%>
+    <hr>
+    <p><i class="fas fa-plus-square"></i> <%= link_to "add a new task", new_path %> </p>
   </div>
 </div>
-<p><i class="fas fa-plus-square"></i> <%= link_to "add a new task", new_path %> </p>

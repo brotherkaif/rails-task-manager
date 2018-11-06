@@ -2,19 +2,21 @@
   <div class="card-body">
 
     <h1>Edit Task</h1>
-
     <%= form_for @task do |f| %>
-      <%= f.label :title %>:
-      <%= f.text_field :title %><br />
+      <div class="form-group">
+        <%= f.label :title %>:
+        <%= f.text_field :title, class: 'form-control' %><br />
+      </div>
 
-      <%= f.label :details %>:
-      <%= f.text_area :details %><br />
-
-      <%= f.label :completed %>:
-      <%= f.check_box :completed %><br />
-
-      <%= f.submit %>
+      <div class="form-group">
+        <%= f.label :details %>:
+        <%= f.text_area :details, class: 'form-control' %><br />
+        <%= f.label :completed %>:
+        <%= f.check_box :completed %><br />
+      </div>
+      <%= f.submit class: 'btn btn-primary' %>
     <% end %>
-
+    <hr>
+    <p><i class="fas fa-arrow-circle-left"></i> <%= link_to "back to tasks", tasks_path %>
   </div>
 </div>
