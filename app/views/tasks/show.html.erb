@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-body">
+    <h1><%= @task.title %></h1>
+    <hr>
+      <%= @task.details %>
+    <hr>
+    <% completed_box = @task.completed ? "far fa-check-square" : "far fa-square" %>    
+    <% completed_message = @task.completed ? "this task has been completed!" : "this task is still incomplete!" %>    
+    <p><i class="<%= completed_box %>" ></i> <%= completed_message %></p>
+  </div>
+</div>
+<%= link_to "back to tasks", tasks_path %>
