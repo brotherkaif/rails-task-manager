@@ -4,7 +4,7 @@
     <% @tasks.each do |task| %>
       <hr>
       <% completed_box = task.completed ? "far fa-check-square" : "far fa-square" %>    
-      <p><i class="<%= completed_box %>" ></i> <%= link_to task.title, task_path(task) %> | <%= link_to "Delete", destroy_path(task) %></p>
+      <p><i class="<%= completed_box %>" ></i> <%= link_to task.title, task_path(task) %> | <%= link_to "Delete", destroy_path(task), method: "delete", data: {confirm: "Are you sure?"}  %></p>
     <% end%>
   </div>
 </div>
