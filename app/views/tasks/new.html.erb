@@ -1,1 +1,17 @@
-<h1>Create a task</h1>
+<div class="card">
+  <div class="card-body">
+
+    <h1>Create a task</h1>
+
+    <%= form_for @task do |f| %>
+      <%= f.label :title %>:
+      <%= f.text_field :title %><br />
+
+      <%= f.label :details %>:
+      <%= f.text_area :details %><br />
+
+      <%= f.submit %>
+    <% end %>
+
+  </div>
+</div>
