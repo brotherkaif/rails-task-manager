@@ -18,6 +18,10 @@ class TasksController < ApplicationController
     redirect_to task_path(@task)
   end
 
+  def edit
+    @task = Task.find(params[:id])  
+  end
+
   def task_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
